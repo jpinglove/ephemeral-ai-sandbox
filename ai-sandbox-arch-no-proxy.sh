@@ -2,6 +2,9 @@
 # Temporary AI SSH sandbox using an Arch Linux container image on Debian/Ubuntu/Pop!_OS and Arch-family hosts.
 # Run: sudo bash ai-sandbox-arch-no-proxy.sh
 #
+# 停止所有正在运行的容器
+#	sudo docker stop $(sudo docker ps -aq) 2>/dev/null || true
+#
 # 一键清理所有 docker 容器和镜像
 #	sudo docker system prune -a --volumes -f
 # ==============================================================================

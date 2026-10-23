@@ -44,6 +44,10 @@
 #   sudo env DURATION_SECONDS=3600 SSH_PORT=2223 bash ai-sandbox-arch-optional-proxy.sh
 #
 #
+#
+# 停止所有正在运行的容器
+#	sudo docker stop $(sudo docker ps -aq) 2>/dev/null || true
+#
 # 一键清理所有 docker 容器和镜像
 #	sudo docker system prune -a --volumes -f
 # ==============================================================================
