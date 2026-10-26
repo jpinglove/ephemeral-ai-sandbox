@@ -171,7 +171,14 @@ if command -v ss >/dev/null 2>&1; then
 fi
 
 # PASSWORD="$(openssl rand -hex 16)"
-PASSWORD="$(python3 -c 'import os; print(os.urandom(16).hex())')"
+# PASSWORD="$(python3 -c 'import os; print(os.urandom(16).hex())')"
+
+# Attempt to use the original OpenSSL method; fallback to Python if it fails
+if ! PASSWORD="$(openssl rand -hex 16 2>/dev/null)"; then
+  log "⚠️  OpenSSL command failed. Using Python backup method for password generation."
+  PASSWORD="$(python3 -c 'import os; print(os.urandom(16).hex())')"
+fi
+# PASSWORD="$(openssl rand -hex 16 2>/dev/null || python3 -c 'import os; print(os.urandom(16).hex())')"
 
 log "生成一次性 SSH 访问凭证..."
 
