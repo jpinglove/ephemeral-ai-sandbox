@@ -170,7 +170,9 @@ if command -v ss >/dev/null 2>&1; then
   fi
 fi
 
-PASSWORD="$(openssl rand -hex 16)"
+# PASSWORD="$(openssl rand -hex 16)"
+PASSWORD="$(python3 -c 'import os; print(os.urandom(16).hex())')"
+
 log "生成一次性 SSH 访问凭证..."
 
 # ==================== 4. 构建沙盒 Dockerfile 与 Entrypoint ====================
