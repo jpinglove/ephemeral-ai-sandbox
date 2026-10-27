@@ -12,7 +12,7 @@
 set -Eeuo pipefail
 umask 077
 
-DURATION_SECONDS="${DURATION_SECONDS:-7200}"
+DURATION_SECONDS="${DURATION_SECONDS:-28800}" # 8小时
 SSH_PORT="${SSH_PORT:-2222}"
 BASE_IMAGE="${BASE_IMAGE:-archlinux:latest}"
 STAMP="$(date +%s)-$$"

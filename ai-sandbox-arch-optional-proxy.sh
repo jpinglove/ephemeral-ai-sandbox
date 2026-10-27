@@ -56,7 +56,7 @@ set -Eeuo pipefail
 umask 077
 
 # ==================== 核心配置变量 (Core Configurations) ====================
-DURATION_SECONDS="${DURATION_SECONDS:-7200}"                # 默认运行时长：2小时 (7200秒)
+DURATION_SECONDS="${DURATION_SECONDS:-28800}"                # 默认运行时长：8小时 (7200秒)
 SSH_PORT="${SSH_PORT:-2222}"                                # 映射到主机的 SSH 端口
 PROXY_URL="${PROXY_URL:-}"
 #PROXY_URL="${PROXY_URL:-http://192.168.200.1:10810}"        # 默认代理配置，留空即为默认直连
